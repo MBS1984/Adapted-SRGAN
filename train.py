@@ -50,11 +50,7 @@ def get_train_data():
         
         # Convert pickle file to tensor
         train_hr_imgs = tf.convert_to_tensor(train_hr_imgs)
-        train_lr_imgs = tf.convert_to_tensor(train_lr_imgs)
-
-
-        # train_hr_imgs = tf.image.resize(train_hr_imgs, size =[192,192])      
-        # train_lr_imgs = tf.image.resize(train_lr_imgs, size =[48,48])          
+        train_lr_imgs = tf.convert_to_tensor(train_lr_imgs)      
      
     # dataset API
     def generator_train():
