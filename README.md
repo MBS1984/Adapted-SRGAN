@@ -32,7 +32,7 @@ An interface associated to application of the code to aeromagnetic map is availa
 - Change all the paths in [config.py](https://drive.google.com/file/d/1dV2zpO6blN3VUaKg3ObXD2srrcvfl5jl/view?usp=sharing) and [train.py](https://drive.google.com/file/d/1nqXHYLPFK3wLzVPDs2OEXkId6esa6Pwp/view?usp=sharing) to your local path. 
 - Training the model based on SRGAN or ASRGAN using [run_me.ipynb](https://colab.research.google.com/drive/1Ituw1Mq8AewthavfioC57LD0WlYRdaM9?usp=sharing) in Google Colab.
 
-## Adapted-SRGAN network architectur
+## Adapted-SRGAN network architecture
 <img src="https://github.com/MBS1984/Adapted-SRGAN/blob/main/images/ASRGAN_network.png" width=90% height=50%>
 
 ## High and low resolution aeromagnetic counterparts 
