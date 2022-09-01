@@ -1,2 +1,2 @@
 # Adapted-SRGAN
-High-resolution aeromagnetic map through Adapted-SRGAN (ASRGAN)
+## High-resolution aeromagnetic map through Adapted-SRGAN (ASRGAN)
