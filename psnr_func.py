@@ -1,4 +1,4 @@
-# from psnr import psnr
+ ### ------------ Function for calculating PSNR ---------------###
 import numpy as np
 import math
 import math
@@ -21,9 +21,6 @@ def psnr_func(validHr, validLr, images_sr,images_bicubic):
   max_psnr_hr_sr = np.max(psnr_hr_sr_tot) 
   mean_psnr_hr_sr = np.mean(psnr_hr_sr_tot)
 
-  print(f'psnr max between hr-sr is:{max_psnr_hr_sr}')
-  print(f'psnr mean between hr-sr is:{mean_psnr_hr_sr}')
-
   #----------- PSNR between HR and Bicubic images  -------- ###
   psnr_HR_bicubic_tot =[]
   for i in range(len(images_bicubic)):
@@ -33,7 +30,9 @@ def psnr_func(validHr, validLr, images_sr,images_bicubic):
               
   max_psnr_hr_bicubic = np.max(psnr_HR_bicubic_tot) 
   mean_psnr_bicubic = np.mean(psnr_HR_bicubic_tot)
-
-  print(f'psnr max between hr-Bicubic is:{max_psnr_hr_bicubic}')
-  print(f'psnr mean between hr-Bicubic is:{mean_psnr_bicubic}')
+  ### ----------------- show the statistics ------------- ###
+  print(f'Maximum PSNR between high resolution and Bicubic is:{max_psnr_hr_bicubic}')
+  print(f'Mean PSNR between high resolution and Bicubic is:{mean_psnr_bicubic}')
+  print(f'Maximum PSNR between high resolution and generated (SR) is:{max_psnr_hr_sr}')
+  print(f'Mean PSNR between high resolution and generated (SR) is:{mean_psnr_hr_sr}')
   return psnr_hr_sr_tot, psnr_HR_bicubic_tot
