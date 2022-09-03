@@ -267,7 +267,6 @@ def train_SRGAN (g='', d='', vgg = '', name = ''):
     n_step_epoch = round(n_epoch // batch_size)
     for epoch in range(n_epoch):
         
-        #mélanger le jeu de données
         train_ds.shuffle(buffer_size = 1000)        
   
         for step, (lr_patchs, hr_patchs) in enumerate(train_ds):
