@@ -1,4 +1,4 @@
- ### ------------ Function for calculating PSNR ---------------###
+### ------------ Function for calculating PSNR ---------------###
 import numpy as np
 import math
 import math
