@@ -1,6 +1,12 @@
 #! /usr/bin/python
 # -*- coding: utf8 -*-
 
+"""
+Function for training super-resolution model. There are two training modes: ASRGAN and SRGAN
+The default training method is ASRGAN. 
+To switch to conventional SRGAN change the training mode argument to SRGAN
+
+"""
 
 # ------------- import python necessary libraries ------------------------------
 import os  
@@ -99,13 +105,6 @@ def train_ASRGAN (g= '', d= '' , vgg= '', name = ''):
     VGG.train()
 
     train_ds = get_train_data()
-    
-    # This part is optional : prepare the test dataset. Usually, GPU is running out of memory.
-    test_ds_hr = open_data(config.TRAIN.hr_img_path)
-    test_ds_lr = open_data(config.TRAIN.lr_img_path)
-    Y = np.random.randint(config.TRAIN.batch_size, size = test_ds_hr.shape[0])
-    test_ds_hr = open_data(config.TRAIN.hr_img_path)[Y]
-    test_ds_lr = open_data(config.TRAIN.lr_img_path)[Y]
     
     # initialize learning (G)
     n_step_epoch = round(n_epoch_init // batch_size)
@@ -231,15 +230,6 @@ def train_SRGAN (g='', d='', vgg = '', name = ''):
 
     train_ds = get_train_data()
     
-    
-    #préparer le jeu de données de test
-    test_ds_hr = open_data(config.TRAIN.hr_img_path)
-    test_ds_lr = open_data(config.TRAIN.lr_img_path)
-    Y = np.random.randint(config.TRAIN.batch_size, size = test_ds_hr.shape[0])
-    test_ds_hr = open_data(config.TRAIN.hr_img_path)[Y]
-    test_ds_lr = open_data(config.TRAIN.lr_img_path)[Y]
-    
-
     ## initialize learning (G)
     n_step_epoch = round(n_epoch_init // batch_size) 
   
@@ -318,7 +308,6 @@ def train_SRGAN (g='', d='', vgg = '', name = ''):
             VGG.save_weights(os.path.join(checkpoint_dir, 'SRGAN_vgg_{}.h5'.format(epoch)))
 
 
-
 #%%
 if __name__ == '__main__':
     import argparse
@@ -342,4 +331,3 @@ if __name__ == '__main__':
     else:
         raise Exception("Unknow --mode")
         
-
