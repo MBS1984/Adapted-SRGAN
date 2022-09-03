@@ -1,3 +1,4 @@
+### --- Function for calculating R-Squared between LR, HR, bicubic and generated (SR) images ---###
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
