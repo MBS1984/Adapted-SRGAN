@@ -1,6 +1,6 @@
-    """
-    Function to open a dataset from a pickle file
-    """
+"""
+Function to open a dataset from a pickle file
+"""
 import pickle as pkl
 
 def open_data(path):
