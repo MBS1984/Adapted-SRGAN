@@ -52,7 +52,7 @@ def r_squared(validLr, validHr, G):
       
   r_squared_lr_hr_tot = np.array(r_squared_lr_hr_tot)  
 
-  # --------------------- calculation R-squared between HR and SR --------------------------
+  # --------------------- calculation R-squared between HR and generated(SR) --------------------------
   r_squared_hr_sr_tot = []
   for i in range(115):
       r_squared_hr_sr = r2_score(np.array(list(chain.from_iterable(validHr[i,:,:,0]))), \
@@ -113,9 +113,9 @@ def r_squared(validLr, validHr, G):
   ax3.yaxis.set_visible(False)
   plt.show()
 
-  print(f'R-squard max between low resolution and high resolution is:{max_rsqrd_lr_hr}')
-  print(f'R-squared mean between low resolution and high resolution is:{mean_rsqrd_lr_hr}') 
+  print(f'Maximum R-Squared between low resolution and high resolution is:{max_rsqrd_lr_hr}')
+  print(f'Mean R-Squared between low resolution and high resolution is:{mean_rsqrd_lr_hr}') 
 
-  print(f'R-squard max between high resolution and generated (SR) is:{max_rsqrd_hr_sr}') 
-  print(f'R-squared mean between high resolution and generated (SR) is:{mean_rsqrd_hr_sr}')
+  print(f'Maximum R-Squared between high resolution and generated (SR) is:{max_rsqrd_hr_sr}') 
+  print(f'Mean R-Squared between high resolution and generated (SR) is:{mean_rsqrd_hr_sr}')
   return r_squared_lr_hr_tot,r_squared_hr_sr_tot, images_sr
