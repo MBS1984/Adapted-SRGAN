@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Aug 29 13:01:12 2022
+Function for visualization of different super-resolution method
 
-@author: mbvan
 """
 import tensorflow as tf
 import numpy as np
